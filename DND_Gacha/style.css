@@ -1,0 +1,198 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(1200px 600px at 20% 0%, #12141c 0%, #0f1220 40%, #0b0e1a 100%);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.container {
+    background: #1c1f2a;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    padding: 18px 18px 22px;
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+h1 {
+    margin: 0 0 14px;
+    color: #e8ecff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.gacha-type {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #2f3446;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #171a24;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.gacha-type:focus {
+    outline: none;
+    border-color: #4d57ff;
+    box-shadow: 0 0 0 3px rgba(77, 87, 255, 0.15);
+}
+
+.gacha-type::placeholder {
+    color: #888;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    margin: 8px 0 18px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #2f3446;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #23283a;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.button-container button:first-child { background: linear-gradient(180deg, #31b155, #279147); border-color: #2aa352; }
+.button-container button:first-child:hover { background: linear-gradient(180deg, #2aa352, #1f7d3b); box-shadow: 0 6px 22px rgba(43, 167, 92, 0.4); }
+.button-container button:last-child { background: linear-gradient(180deg, #f24d44, #c72e27); border-color: #f24d44; }
+.button-container button:last-child:hover { background: linear-gradient(180deg, #e64239, #b82a24); box-shadow: 0 6px 22px rgba(244, 78, 68, 0.35); }
+
+.results-area {
+    border: 1px solid #2f3446;
+    border-radius: 8px;
+    padding: 14px 14px 6px;
+    min-height: 160px;
+    background: #131722;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.result-item {
+    margin-bottom: 12px;
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    font-weight: bold;
+    color: #7aa2ff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.result-value {
+    color: #ffffff;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+.placeholder {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 18px;
+}
+
+/* Glowing effect for interactive elements */
+button:active {
+    transform: translateY(0);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a6a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b73ff;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(145deg, #2d2d44, #1e1e2e);
+    border: 2px solid #4a4a6a;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-item {
+    padding: 12px 15px;
+    color: #ffffff;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: rgba(107, 115, 255, 0.2);
+    color: #6b73ff;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Gacha System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="page">
+    <div class="container" id="singleRoll">
+        <h1>The Dih and Dih Innator</h1>
+        
+        <!-- Gacha Type Input -->
+        <div class="input-container">
+            <input type="text" class="gacha-type" id="gachaType" placeholder="May you find your book in this place." autocomplete="off">
+            <div class="dropdown" id="dropdown"></div>
+        </div>
+        
+        <!-- Button Container -->
+        <div class="button-container">
+            <button>Roll</button>
+            <button>Reset</button>
+        </div>
+        
+        <!-- Results Display Area -->
+        <div class="results-area" id="resultsArea">
+            <div class="placeholder"></div>
+        </div>
+    </div>
+
+    <div class="container" id="bundlePanel">
+        <h1>Book Bundles</h1>
+        <div class="button-container">
+            <button id="bundleGenerate">Generate Bundle</button>
+            <button id="bundleClear">Clear</button>
+        </div>
+        <div class="results-area" id="bundleResults">
+            <div class="placeholder"></div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

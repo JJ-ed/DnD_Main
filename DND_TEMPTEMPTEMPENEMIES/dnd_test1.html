@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Left Side -->
+        <div class="left-panel">
+            <!-- Character/Profile Management -->
+            <div class="character-section">
+                <h3>ENEMY Management</h3>
+                <div class="input-group">
+                    <label for="name">NAME:</label>
+                    <input type="text" id="name" placeholder="Enter name">
+                </div>
+                <div class="input-group">
+                    <label for="factions">FACTIONS:</label>
+                    <select id="factions" class="stat-input">
+                        <option value="">Select Faction</option>
+                        <option value="Hana Association">Hana Association</option>
+                        <option value="Zwei Association">Zwei Association</option>
+                        <option value="Tres Association">Tres Association</option>
+                        <option value="Shi Association">Shi Association</option>
+                        <option value="Cinq Southern Association">Cinq Southern Association</option>
+                        <option value="Cinq Western Association">Cinq Western Association</option>
+                        <option value="Liu Association">Liu Association</option>
+                        <option value="Seven Association">Seven Association</option>
+                        <option value="Devyat Association">Devyat Association</option>
+                        <option value="Dieci Association">Dieci Association</option>
+                        <option value="Öufi Association">Öufi Association</option>
+                        <option value="The Thumb">The Thumb</option>
+                        <option value="The Index">The Index</option>
+                        <option value="The Middle">The Middle</option>
+                        <option value="The Ring">The Ring</option>
+                        <option value="Kurokumo Clan">Kurokumo Clan</option>
+                        <option value="Blade Lineage">Blade Lineage</option>
+                        <option value="Full Stop Office">Full Stop Office</option>
+                        <option value="Molar Boatworks Office">Molar Boatworks Office</option>
+                        <option value="Dawn Office">Dawn Office</option>
+                        <option value="Gaze Office">Gaze Office</option>
+                        <option value="Twin Hook Pirates">Twin Hook Pirates</option>
+                        <option value="Ting Tang Gang">Ting Tang Gang</option>
+                        <option value="Los Mariachis">Los Mariachis</option>
+                        <option value="Wuthering Heights">Wuthering Heights</option>
+                        <option value="Dead Rabbits Gang">Dead Rabbits Gang</option>
+                        <option value="Rosespanner Workshop">Rosespanner Workshop</option>
+                        <option value="Multicrack Office">Multicrack Office</option>
+                        <option value="Fang Hunt Office">Fang Hunt Office</option>
+                        <option value="Firefist Office">Firefist Office</option>
+                        <option value="N Corp.">N Corp.</option>
+                        <option value="W Corp.">W Corp.</option>
+                        <option value="T Corp.">T Corp.</option>
+                        <option value="K Corp.">K Corp.</option>
+                        <option value="R Corp.">R Corp.</option>
+                        <option value="Pequod Town">Pequod Town</option>
+                        <option value="Bloodfiend">Bloodfiend</option>
+                        <option value="Luckhold Maids">Luckhold Maids</option>
+                        <option value="Ashley Graham">Ashley Graham</option>
+                        <option value="Luckhold Butler">Luckhold Butler</option>
+                        <option value="Ben Graham">Ben Graham</option>
+                        <option value="Lady Luck Casino">Lady Luck Casino</option>
+                        <option value="Luckhold Siblings">Luckhold Siblings</option>
+                        <option value="Faith of the Promised Land">Faith of the Promised Land</option>
+                    </select>
+                </div>
+                <div class="stats-group">
+                    <div class="stat-input-group">
+                        <label for="grade">GRADE:</label>
+                        <input type="number" id="grade" class="stat-input" placeholder="0-9" min="0" max="9" maxlength="1">
+                    </div>
+                    <div class="stat-input-group">
+                        <label for="fortitude">FORTITUDE:</label>
+                        <input type="number" id="fortitude" class="stat-input" placeholder="" maxlength="1">
+                    </div>
+                    <div class="stat-input-group">
+                        <label for="prudence">PRUDENCE:</label>
+                        <input type="number" id="prudence" class="stat-input" placeholder="" maxlength="1">
+                    </div>
+                    <div class="stat-input-group"> 
+                        <label for="temperance">TEMPERANCE:</label>
+                        <select id="temperance" class="stat-input">
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="EX">EX</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Speed Settings -->
+                <div class="speed-settings-section">
+                    <button id="speedSettingsBtn" class="speed-settings-btn">SPEED</button>
+                    <div id="speedDropdown" class="speed-dropdown">
+                        <div class="speed-row">
+                            <span class="speed-label">MIN SPEED:</span>
+                            <input type="number" id="minSpeed" class="speed-input" value="1" min="1" max="9">
+                        </div>
+                        <div class="speed-row">
+                            <span class="speed-label">MAX SPEED:</span>
+                            <input type="number" id="maxSpeed" class="speed-input" value="3" min="1" max="9">
+                        </div>
+                        <div class="speed-row">
+                            <span class="speed-label">SPEED DICE:</span>
+                            <input type="number" id="speedDice" class="speed-input" value="1" min="1" max="9">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Passives Management -->
+                <div class="passives-section">
+                    <h3 class="red-text">Passives <span id="addPassiveBtn" class="add-passive-btn" title="Add Passive">+</span></h3>
+                    <div class="list-display" id="passivesListDisplay">
+                        <!-- Passives will be populated here -->
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" id="save">SAVE</button>
+                    <button class="action-btn" id="load">LOAD</button>
+                    <button class="action-btn" id="delete">DELETE</button>
+                </div>
+                <button class="update-btn" id="update">UPDATE</button>
+            </div>
+
+            <!-- Debug Section -->
+            <div class="debug-section">
+                <h3>Debug Tools</h3>
+                <div class="debug-input-group">
+                    <label for="debugCategory">Page Category:</label>
+                    <select id="debugCategory" class="debug-select">
+                        <option value="">Select Category</option>
+                        <option value="Regular Pages">Regular Pages</option>
+                        <option value="Hana Association">Hana Association</option>
+                        <option value="Zwei Association">Zwei Association</option>
+                        <option value="Shi Association">Shi Association</option>
+                        <option value="Cinq Southern Association">Cinq Southern Association</option>
+                        <option value="Cinq Western Association">Cinq Western Association</option>
+                        <option value="Liu Association">Liu Association</option>
+                        <option value="Seven Association">Seven Association</option>
+                        <option value="Devyat Association">Devyat Association</option>
+                        <option value="Dieci Association">Dieci Association</option>
+                        <option value="Öufi Association">Öufi Association</option>
+                        <option value="The Thumb">The Thumb</option>
+                        <option value="The Index">The Index</option>
+                        <option value="The Middle">The Middle</option>
+                        <option value="The Ring">The Ring</option>
+                        <option value="Kurokumo Clan">Kurokumo Clan</option>
+                        <option value="Blade Lineage">Blade Lineage</option>
+                        <option value="Full Stop Office">Full Stop Office</option>
+                        <option value="Molar Boatworks Office">Molar Boatworks Office</option>
+                        <option value="Dawn Office">Dawn Office</option>
+                        <option value="Gaze Office">Gaze Office</option>
+                        <option value="Twin Hook Pirates">Twin Hook Pirates</option>
+                        <option value="Ting Tang Gang">Ting Tang Gang</option>
+                        <option value="Los Mariachis">Los Mariachis</option>
+                        <option value="Wuthering Heights">Wuthering Heights</option>
+                        <option value="The Wild Hunt">The Wild Hunt</option>
+                        <option value="Rosespanner Workshop">Rosespanner Workshop</option>
+                        <option value="Multicrack Office">Multicrack Office</option>
+                        <option value="Dead Rabbits Gang">Dead Rabbits Gang</option>
+                        <option value="Fang Hunt Office">Fang Hunt Office</option>
+                        <option value="Firefist Office">Firefist Office</option>
+                        <option value="W Corp.">W Corp.</option>
+                        <option value="T Corp.">T Corp.</option>
+                        <option value="N Corp.">N Corp.</option>
+                        <option value="K Corp.">K Corp.</option>
+                        <option value="R Corp.">R Corp.</option>
+                        <option value="Bloodfiend">Bloodfiend</option>
+                        <option value="Volatile Ego: Waxen Pinion">Volatile Ego: Waxen Pinion</option>
+                        <option value="Luckhold Maids">Luckhold Maids</option>
+                        <option value="Ashley Graham">Ashley Graham</option>
+                        <option value="Luckhold Butler">Luckhold Butler</option>
+                        <option value="Ben Graham">Ben Graham</option>
+                        <option value="Lady Luck Casino">Lady Luck Casino</option>
+                        <option value="Luckhold Siblings">Luckhold Siblings</option>
+                        <option value="Faith of the Promised Land">Faith of the Promised Land</option>
+                    </select>
+                </div>
+                <div class="debug-buttons">
+                    <button class="debug-btn" id="debugAddAll">ADD ALL PAGES</button>
+                    <button class="debug-btn" id="debugRollAll">ROLL ALL PAGES</button>
+                </div>
+            </div>
+
+            <!-- Combat Pages Management -->
+            <div class="combat-pages-section">
+                <h3 class="red-text">Combat Pages</h3>
+                <div class="search-group">
+                    <input type="text" placeholder="" class="search-input">
+                </div>
+                        <div class="list-display">
+            <!--Regular Pages-->
+            <div class="list-item" data-page="1">Evade</div>
+            <div class="list-item" data-page="2">Light Attack</div>
+            <div class="list-item" data-page="3">Light Defense</div>
+            <div class="list-item" data-page="4">Charge and Cover</div>
+            <div class="list-item" data-page="5">Thrust</div>
+            <div class="list-item" data-page="6">Focused Strikes</div>
+            <div class="list-item" data-page="7">Alleyway Counter</div>
+
+            <!--Hana Association Pages-->
+            <div class="list-item" data-page="8">Augury Infusion</div>
+            <div class="list-item" data-page="9">Celestial Insight</div>
+            <div class="list-item" data-page="10">Augury Kick</div>
+            <div class="list-item" data-page="11">Augury Crusher</div>
+            <div class="list-item" data-page="12">True Trigram Formation</div>
+            <div class="list-item" data-page="17">Unyielding Strike</div>
+            <div class="list-item" data-page="18">Impugnatio Ultima</div>
+
+            <!--Zwei Association Pages-->
+            <div class="list-item" data-page="19">Defensive Stance</div>
+            <div class="list-item" data-page="20">Sharp Swipe</div>
+            <div class="list-item" data-page="21">Avert</div>
+            <div class="list-item" data-page="22">Retaliate</div>
+            <div class="list-item" data-page="23">Law and Order</div>
+            <div class="list-item" data-page="24">Your Shield</div>
+            <div class="list-item" data-page="25">Fence</div>
+            <div class="list-item" data-page="26">Handling Work</div>
+            <div class="list-item" data-page="27">Combat Preparation</div>
+
+            <!--Shi Association Pages-->
+            <div class="list-item" data-page="28">Catch Breath</div>
+            <div class="list-item" data-page="29">To Overcome Crisis</div>
+            <div class="list-item" data-page="30">Extreme Edge</div>
+            <div class="list-item" data-page="31">Desperate Struggle</div>
+            <div class="list-item" data-page="32">Endless Battle</div>
+            <div class="list-item" data-page="33">Flying Sword</div>
+            <div class="list-item" data-page="34">Flashing Strike</div>
+            <div class="list-item" data-page="35">Boundary of Death</div>
+
+            <!--Cinq Southern Association Pages-->
+            <div class="list-item" data-page="36">Declared Duel</div>
+            <div class="list-item" data-page="37">Remise</div>
+            <div class="list-item" data-page="38">Flèche</div>
+            <div class="list-item" data-page="39">Marche</div>
+            <div class="list-item" data-page="40">Punition</div>
+            <div class="list-item" data-page="41">Feint</div>
+            <div class="list-item" data-page="42">Balestra Fente</div>
+
+            <!--Cinq Western Association Pages-->
+            <div class="list-item" data-page="43">Focused Attack</div>
+            <div class="list-item" data-page="44">Allez</div>
+            <div class="list-item" data-page="45">Riposte</div>
+            <div class="list-item" data-page="46">Coup Droit</div>
+            <div class="list-item" data-page="47">Fente</div>
+            <div class="list-item" data-page="48">Contre Attaque</div>
+            <div class="list-item" data-page="49">Salut</div>
+
+            <!--Liu Association Pages-->
+            <div class="list-item" data-page="50">Ignite Weaponry</div>
+            <div class="list-item" data-page="51">Flowing Flame</div>
+            <div class="list-item" data-page="52">Red Kick</div>
+            <div class="list-item" data-page="53">Fiery Knife Hand</div>
+            <div class="list-item" data-page="54">Perfected Death Fist</div>
+            <div class="list-item" data-page="55">Pinpoint Blitz</div>
+            <div class="list-item" data-page="56">Inner Gate Elbow Strike</div>
+            <div class="list-item" data-page="57">Frontal Assault</div>
+            <div class="list-item" data-page="58">Fiery Waltz</div>
+            <div class="list-item" data-page="59">Single-Point Stab</div>
+            <div class="list-item" data-page="60">Emotional Turbulence</div>
+            <div class="list-item" data-page="61">Coordinated Assault</div>
+            <div class="list-item" data-page="62">Inner Ardor</div>
+            <div class="list-item" data-page="63">Fervid Emotions</div>
+            <div class="list-item" data-page="64">All-out War</div>
+            <div class="list-item" data-page="65">Fiery Dragon Slash</div>
+
+            <!--Seven Association Pages-->
+            <div class="list-item" data-page="66">Investigation</div>
+            <div class="list-item" data-page="67">Prodding</div>
+            <div class="list-item" data-page="68">Swash</div>
+            <div class="list-item" data-page="69">Upwards Slash</div>
+            <div class="list-item" data-page="70">Slash</div>
+            <div class="list-item" data-page="71">Predictive Analysis</div>
+            <div class="list-item" data-page="72">Profiling</div>
+            <div class="list-item" data-page="73">Forensics</div>
+            <div class="list-item" data-page="74">Exploit The Gap</div>
+
+            <!--Devyat Association Pages-->
+            <div class="list-item" data-page="75">Courier Support & Control Sequence</div>
+            <div class="list-item" data-page="76">Courier Trunk - Decay Knife</div>
+            <div class="list-item" data-page="77">Courier Trunk - Decay Hammer</div>
+            <div class="list-item" data-page="78">Courier Trunk - Gadget Reveal</div>
+            <div class="list-item" data-page="79">Courier Trunk - Demolition Gadget</div>
+            <div class="list-item" data-page="80">Courier Trunk - Assistance & Crisis Control System</div>
+            <div class="list-item" data-page="81">Courier Trunk - Poludnitsa</div>
+
+            <!--Dieci Association Pages-->
+            <div class="list-item" data-page="82">Unveil</div>
+            <div class="list-item" data-page="83">Studious Dedication</div>
+            <div class="list-item" data-page="84">Guiding Steps</div>
+            <div class="list-item" data-page="85">Excruciating Study</div>
+            <div class="list-item" data-page="86">Weight of Knowledge</div>
+            <div class="list-item" data-page="428">Holy Insight</div>
+            <div class="list-item" data-page="429">Expend Knowledge</div>
+            <div class="list-item" data-page="430">Scorched Knowledge</div>
+            <div class="list-item" data-page="87">Missionary of Knowledge</div>
+            <div class="list-item" data-page="88">Grace of Knowledge</div>
+
+            <!--Oufi Association Pages-->
+            <div class="list-item" data-page="89">Sentence</div>
+            <div class="list-item" data-page="90">Execution Advised</div>
+            <div class="list-item" data-page="91">Execution Sentencing</div>
+            <div class="list-item" data-page="92">Do Not Obstruct</div>
+            <div class="list-item" data-page="93">Grave Attendance</div>
+            <div class="list-item" data-page="97">Bona Fide</div>
+            <div class="list-item" data-page="98">Execution Imminent</div>
+            <div class="list-item" data-page="99">Obligation Fulfillment</div>
+
+            <!--The Thumb Pages-->
+            <div class="list-item" data-page="101">Reload Bullets</div>
+            <div class="list-item" data-page="106">Suppressing Shot</div>
+            <div class="list-item" data-page="107">Focus Fire</div>
+            <div class="list-item" data-page="108">Steel Knuckles</div>
+            <div class="list-item" data-page="109">Class and Respect</div>
+            <div class="list-item" data-page="110">Summary Judgement</div>
+            <div class="list-item" data-page="111">Discipline</div>
+            <div class="list-item" data-page="112">Le Regole</div>
+
+            <!-- Index Pages-->
+            <div class="list-item" data-page="113">To Where the Prescript Points</div>
+            <div class="list-item" data-page="114">Faith</div>
+            <div class="list-item" data-page="115">Proselyte's Blade</div>
+            <div class="list-item" data-page="116">Execute</div>
+            <div class="list-item" data-page="117">Sense Quarry</div>
+            <div class="list-item" data-page="118">Will of the Prescript</div>
+            <div class="list-item" data-page="119">Undertake Prescript</div>
+            <div class="list-item" data-page="120">Multislash</div>
+            <div class="list-item" data-page="121">Binding Chains</div>
+            <div class="list-item" data-page="122">Heavy Trace</div>
+            <div class="list-item" data-page="123">Swift Trace</div>
+            <div class="list-item" data-page="124">Unlock - I</div>
+            <div class="list-item" data-page="129">Eliminate</div>
+            <div class="list-item" data-page="130">Eradication</div>
+            <div class="list-item" data-page="131">Decapitation</div>
+            <div class="list-item" data-page="132">Castigation</div>
+
+            <!-- Kurokumo Clan Pages -->
+            <div class="list-item" data-page="133">Rules of the Backstreets</div>
+            <div class="list-item" data-page="134">Focus Strike</div>
+            <div class="list-item" data-page="135">Lenticular Swirl</div>
+            <div class="list-item" data-page="136">Stormcloud</div>
+            <div class="list-item" data-page="137">Thundercleave</div>
+            <div class="list-item" data-page="138">Ink Over</div>
+            <div class="list-item" data-page="139">Downward Slash</div>
+            <div class="list-item" data-page="140">Sharpened Blade</div>
+            <div class="list-item" data-page="408">Clean Up</div>
+            <div class="list-item" data-page="409">Cleave</div>
+            <div class="list-item" data-page="411">Cloudburst</div>
+
+            <!-- Blade Lineage Pages -->
+            <div class="list-item" data-page="141">Overthrow</div>
+            <div class="list-item" data-page="143">Draw of the Sword</div>
+            <div class="list-item" data-page="144">Heel Turn</div>
+            <div class="list-item" data-page="145">Flank Thrust</div>
+            <div class="list-item" data-page="146">Moonlit Blade Dance</div>
+            <div class="list-item" data-page="147">Blade Arc</div>
+            <div class="list-item" data-page="148">Acupuncture</div>
+            <div class="list-item" data-page="149">Slay</div>
+            <div class="list-item" data-page="150">Yield My Flesh</div>
+            
+            <!-- Full Stop Office Pages -->
+            <div class="list-item" data-page="152">Take the Shot</div>
+            <div class="list-item" data-page="153">Melee Support</div>
+            <div class="list-item" data-page="154">Taking Cover</div>
+            <div class="list-item" data-page="155">Target Marked</div>
+            <div class="list-item" data-page="156">Combo:Target Marked</div>
+            <div class="list-item" data-page="157">Return Fire</div>
+            <div class="list-item" data-page="158">Headshot</div>
+            <div class="list-item" data-page="159">Beyond the Shadow</div>
+            <div class="list-item" data-page="160">Full-Stop to Life</div>
+            <div class="list-item" data-page="161">Combo:Full-Stop to Life</div>
+            <div class="list-item" data-page="162">Goin' for the Bullseye</div>
+            <div class="list-item" data-page="163">AL-HV Pulverisation Round</div>
+
+            <!-- Molar Boatworks Office Pages -->
+            <div class="list-item" data-page="164">Unstable Power Output</div>
+            <div class="list-item" data-page="165">Fierce Assault</div>
+            <div class="list-item" data-page="166">Steady...</div>
+            <div class="list-item" data-page="167">Crab Bastards!</div>
+            <div class="list-item" data-page="168">Here to get your Boats Fixed?</div>
+            <div class="list-item" data-page="169">Ready to Crush</div>
+            <div class="list-item" data-page="170">Explosive Blast</div>
+            <div class="list-item" data-page="171">Risky Judgement</div>
+
+            <!-- Dawn Office Pages -->
+            <div class="list-item" data-page="172">Searing Blade</div>
+            <div class="list-item" data-page="173">Sunset Blade</div>
+            <div class="list-item" data-page="174">Flash of Sunup</div>
+            <div class="list-item" data-page="175">Crack of Dawn</div>
+            <div class="list-item" data-page="176">Rue</div>
+            <div class="list-item" data-page="177">Stigmatize</div>
+            <div class="list-item" data-page="178">Searing Sword</div>
+            <div class="list-item" data-page="179">Flaring Brand</div>
+            <div class="list-item" data-page="180">Fierce Charge</div>
+            <div class="list-item" data-page="181">Feather Shield</div>
+            <div class="list-item" data-page="182">Rueful Eventide</div>
+            <div class="list-item" data-page="183">Blazing Strike</div>
+            
+            <!-- Gaze Office Pages -->
+            <div class="list-item" data-page="184">Observe</div>
+            <div class="list-item" data-page="185">Unavoidable Gaze</div>
+            <div class="list-item" data-page="186">Structural Analysis</div>
+            <div class="list-item" data-page="187">You're a Hindrance</div>
+            <div class="list-item" data-page="188">Electric Shock</div>
+            <div class="list-item" data-page="189">Opportunity Spotted</div>
+            <div class="list-item" data-page="190">Zzzzzap</div>
+            <div class="list-item" data-page="191">Binding Arms</div>
+            <div class="list-item" data-page="192">Singularity Seeker</div>
+
+            <!-- Twin Hook Pirates Pages -->
+            <div class="list-item" data-page="193">Unjust Enrichment</div>
+            <div class="list-item" data-page="194">Looting</div>
+            <div class="list-item" data-page="195">Tear the Flesh</div>
+            <div class="list-item" data-page="196">Hook Slice</div>
+            <div class="list-item" data-page="197">Tear the Gap</div>
+            <div class="list-item" data-page="198">Easy Breathing</div>
+            <div class="list-item" data-page="199">Two Sides of a Coin</div>
+            <div class="list-item" data-page="200">Negotiation Start</div>
+            <div class="list-item" data-page="201">Unilateral Business</div>
+            <div class="list-item" data-page="202">Foregone Conclusion</div>
+
+            <!-- Ting Tang Gang Pages -->
+            <div class="list-item" data-page="203">Gamble on Life</div>
+            <div class="list-item" data-page="204">Carve</div>
+            <div class="list-item" data-page="205">Heavy Swing</div>
+            <div class="list-item" data-page="206">Sneaky Bash</div>
+            <div class="list-item" data-page="207">Cunning Stab</div>
+            <div class="list-item" data-page="208">Glinting Wish</div>
+            <div class="list-item" data-page="209">Throat Slit</div>
+            <div class="list-item" data-page="210">Shank</div>
+            <div class="list-item" data-page="211">Mutilate</div>
+
+            <!-- Los Mariachis Pages -->
+            <div class="list-item" data-page="212">Baile Y Rola</div>
+            <div class="list-item" data-page="213">¡Rápidamente!</div>
+            <div class="list-item" data-page="214">Bailemos~</div>
+            <div class="list-item" data-page="215">¡Olé!</div>
+            <div class="list-item" data-page="216">¿Eso es todo?</div>
+            <div class="list-item" data-page="217">Duelo de Baile</div>
+            <div class="list-item" data-page="218">Joviales</div>
+            <div class="list-item" data-page="219">Emocionado</div>
+            <div class="list-item" data-page="220">Pañata Party~!</div>
+            <div class="list-item" data-page="221">Se Acabó la Fiesta</div>
+
+            <!-- Wuthering Heights Pages -->
+            <div class="list-item" data-page="222">Echoes of the Manor</div>
+            <div class="list-item" data-page="223">Confiscation</div>
+            <div class="list-item" data-page="224">Interloper Reception</div>
+            <div class="list-item" data-page="225">Knocking</div>
+            <div class="list-item" data-page="226">Hunting Plans</div>
+            <div class="list-item" data-page="227">Dusting</div>
+            <div class="list-item" data-page="228">Heartseal</div>
+            <div class="list-item" data-page="229">As Mistress Commands</div>
+            
+            <!-- The Wild Hunt Pages -->
+            <div class="list-item" data-page="230">Oh Dullahan...</div>
+            <div class="list-item" data-page="231">Beheading</div>
+            <div class="list-item" data-page="232">Memorial Procession</div>
+            <div class="list-item" data-page="233">Requiem</div>
+            <div class="list-item" data-page="234">Lament, Mourn, and Despair</div>
+            
+            <!-- Rosespanner Workshop Pages -->
+            <div class="list-item" data-page="235">Synchronization</div>
+            <div class="list-item" data-page="236">I'll Grind You Up</div>
+            <div class="list-item" data-page="237">Rev Up</div>
+            <div class="list-item" data-page="238">Vibration Amplification</div>
+            <div class="list-item" data-page="239">Stand Back!</div>
+            <div class="list-item" data-page="240">Trembling Conversion</div>
+            <div class="list-item" data-page="241">Vibration Compression</div>
+            <div class="list-item" data-page="242">Final Warmup</div>
+            <div class="list-item" data-page="243">Let's Rack Up Some Scores</div>
+            
+            <!-- Multicrack Office Pages -->
+            <div class="list-item" data-page="244">Activate Prosthesis</div>
+            <div class="list-item" data-page="245">40S-2 Activation</div>
+            <div class="list-item" data-page="246">Photoelectric Mark</div>
+            <div class="list-item" data-page="247">Photoelectric Harpoon</div>
+            <div class="list-item" data-page="248">40Y-3 Activation</div>
+            <div class="list-item" data-page="249">40Y-3 Charge</div>
+            <div class="list-item" data-page="250">Charge</div>
+            
+            <!-- Dead Rabbits Gang Pages -->
+            <div class="list-item" data-page="252">Smackdown</div>
+            <div class="list-item" data-page="253">Hurt</div>
+            <div class="list-item" data-page="254">Break</div>
+            <div class="list-item" data-page="255">Remove</div>
+            <div class="list-item" data-page="256">Get Out of My Sight</div>
+            <div class="list-item" data-page="257">Hold Them Back</div>
+            <div class="list-item" data-page="258">Counter</div>
+            <div class="list-item" data-page="259">Breakthrough</div>
+            <div class="list-item" data-page="260">Bat Bash</div>
+            <div class="list-item" data-page="261">Upheaval</div>
+            <div class="list-item" data-page="262">Relentless</div>
+            
+            <!-- Fang Hunt Office Pages -->
+            <div class="list-item" data-page="263">Blood Lure</div>
+            <div class="list-item" data-page="264">Slam</div>
+            <div class="list-item" data-page="265">Crush Wounds</div>
+            <div class="list-item" data-page="266">Wild Swinging</div>
+            <div class="list-item" data-page="267">Styptics</div>
+            <div class="list-item" data-page="268">Hemostasis</div>
+            <div class="list-item" data-page="269">Anti-Bloodfiend Crush</div>
+            
+            <!-- Firefist Office Pages -->
+            <div class="list-item" data-page="270">Overheated Fuel</div>
+            <div class="list-item" data-page="271">Fire Punch</div>
+            <div class="list-item" data-page="272">Flamethrow</div>
+            <div class="list-item" data-page="273">I'll burn away every last drop of your filthy blood</div>
+            <div class="list-item" data-page="274">I have to keep going for Big Sis</div>
+            <div class="list-item" data-page="275">Firefist</div>
+            
+            <!-- W Corp. Pages -->
+            <div class="list-item" data-page="276">Dimensional Rift</div>
+            <div class="list-item" data-page="277">Rip</div>
+            <div class="list-item" data-page="278">Rewind</div>
+            <div class="list-item" data-page="279">Energy Cycle</div>
+            <div class="list-item" data-page="280">Overcharged</div>
+            <div class="list-item" data-page="281">Ripple</div>
+            <div class="list-item" data-page="282">Leap</div>
+            <div class="list-item" data-page="283">Charged Leap</div>
+            <div class="list-item" data-page="284">Rip Space</div>
+            <div class="list-item" data-page="285">Rip Dimension</div>
+            
+            <!-- T Corp. Pages -->
+            <div class="list-item" data-page="286">Time Moratorium</div>
+            <div class="list-item" data-page="287">Prepare to Collect</div>
+            <div class="list-item" data-page="288">T Corp. Martial Suppression</div>
+            <div class="list-item" data-page="289">Execute Collections</div>
+            <div class="list-item" data-page="290">Borrow Time</div>
+            <div class="list-item" data-page="291">Let Us Prepare to Collect</div>
+            <div class="list-item" data-page="292">T Corp. Accelerated Amputator</div>
+            <div class="list-item" data-page="293">I Shall Summon the Time</div>
+            <div class="list-item" data-page="294">I Command. Halt!</div>
+            
+            <!-- N Corp. Pages -->
+            <div class="list-item" data-page="295">Ponderous Inquisition</div>
+            <div class="list-item" data-page="296">Enactment!</div>
+            <div class="list-item" data-page="297">Fanatical Judgement</div>
+            <div class="list-item" data-page="298">Spike Drive</div>
+            <div class="list-item" data-page="299">Drive</div>
+            <div class="list-item" data-page="300">Foolishness...!</div>
+            <div class="list-item" data-page="301">Hammers, Heed Me...!</div>
+            <div class="list-item" data-page="302">You Are Cleansed of Sin</div>
+            <div class="list-item" data-page="303">Annihilate Heretics</div>
+            <div class="list-item" data-page="304">Deep Thrust</div>
+            <div class="list-item" data-page="305">The Gripping</div>
+            <div class="list-item" data-page="306">Coerced Judgement</div>
+            <div class="list-item" data-page="307">Pu...rify</div>
+            <div class="list-item" data-page="308">Retribution</div>
+            <div class="list-item" data-page="309">Rough Nailing</div>
+            <div class="list-item" data-page="310">YOU DARE!</div>
+            <div class="list-item" data-page="311">Vigorous Hammering</div>
+            <div class="list-item" data-page="312">Oppressive Preaching</div>
+            <div class="list-item" data-page="313">Assertive Inquisition</div>
+            <div class="list-item" data-page="314">Zealous Purge</div>
+            <div class="list-item" data-page="315">Ironclad Retribution</div>
+            <div class="list-item" data-page="316">Thrusting Nail</div>
+            <div class="list-item" data-page="317">Ruling Hammer</div>
+            <div class="list-item" data-page="318">Unite</div>
+            <div class="list-item" data-page="319">Rightful Purge</div>
+            <div class="list-item" data-page="320">Congregate</div>
+            <div class="list-item" data-page="321">Inquisition</div>
+            <div class="list-item" data-page="322">Nail Pin</div>
+            <div class="list-item" data-page="323">Hammer</div>
+            <div class="list-item" data-page="324">Knock</div>
+            <div class="list-item" data-page="325">Plunge In</div>
+            <div class="list-item" data-page="326">Cackle</div>
+            <div class="list-item" data-page="327">Sin-skewering Nail</div>
+            <div class="list-item" data-page="328">Amoral Enactment</div>
+            <div class="list-item" data-page="329">Purify</div>
+            <div class="list-item" data-page="330">Execution</div>
+            <div class="list-item" data-page="331">Self-destructive Purge</div>
+            <div class="list-item" data-page="332">Enough...</div>
+            
+            <!-- K Corp. Pages -->
+            <div class="list-item" data-page="333">Shelter</div>
+            <div class="list-item" data-page="334">Pause! Halt!</div>
+            <div class="list-item" data-page="335">Stop There, Please!</div>
+            <div class="list-item" data-page="336">Arresting!</div>
+            <div class="list-item" data-page="337">Stop the Intruder</div>
+            <div class="list-item" data-page="338">No Entry</div>
+            <div class="list-item" data-page="339">Forbid Entry</div>
+            <div class="list-item" data-page="340">Proximity Shooting</div>
+            <div class="list-item" data-page="341">Flash; Flash;</div>
+            <div class="list-item" data-page="342">Scanning for weakness.</div>
+            <div class="list-item" data-page="343">Impeding movement.</div>
+            <div class="list-item" data-page="344">Arresting.</div>
+            <div class="list-item" data-page="345">Administering HP Ampule</div>
+            <div class="list-item" data-page="346">Administering Resister Ampule</div>
+            <div class="list-item" data-page="347">Discharging Decay Ampule</div>
+            <div class="list-item" data-page="348">Exposing weakness.</div>
+            <div class="list-item" data-page="349">Continue engaging.</div>
+            <div class="list-item" data-page="350">Do not reserve your strength.</div>
+            <div class="list-item" data-page="351">Suspicious Individuals</div>
+            <div class="list-item" data-page="352">Restrain</div>
+            <div class="list-item" data-page="353">No Trespassing</div>
+            <div class="list-item" data-page="354">Modified K Corp Ampule</div>
+            <div class="list-item" data-page="355">Takedown</div>
+            <div class="list-item" data-page="356">Raid</div>
+            <div class="list-item" data-page="357">Activate HP Bullets</div>
+            <div class="list-item" data-page="358">Neutralize Target</div>
+            <div class="list-item" data-page="359">Blockade</div>
+            <div class="list-item" data-page="360">Impede the Intruder</div>
+            <div class="list-item" data-page="361">Decay Blade</div>
+            <div class="list-item" data-page="362">Excise Target</div>
+            
+            <!-- R Corp. Pages -->
+            <div class="list-item" data-page="363">Graze the Grass</div>
+            <div class="list-item" data-page="364">Energy Strike</div>
+            <div class="list-item" data-page="365">Mind Strike</div>
+            <div class="list-item" data-page="366">Flaying Surge</div>
+            <div class="list-item" data-page="367">Concentration</div>
+            <div class="list-item" data-page="368">Mind Whip</div>
+            <div class="list-item" data-page="369">Mind Crush</div>
+            <div class="list-item" data-page="370">Pinpoint Shot</div>
+            <div class="list-item" data-page="371">Concentrated Fire</div>
+            <div class="list-item" data-page="372">Battle Command</div>
+            <div class="list-item" data-page="373">Rapid Gashes</div>
+            <div class="list-item" data-page="374">Quick Suppression</div>
+            
+            <!-- R Corp. Protection Pages -->
+            <div class="list-item" data-page="375">Savage Mode</div>
+            <div class="list-item" data-page="376">Bulky Impact</div>
+            <div class="list-item" data-page="377">Weighty Bash</div>
+            <div class="list-item" data-page="378">Demolish</div>
+            <div class="list-item" data-page="379">Bioelectricity Induction</div>
+            <div class="list-item" data-page="380">Rhino Ram</div>
+            <div class="list-item" data-page="381">Ground Crash</div>
+            <div class="list-item" data-page="382">Clone</div>
+            <div class="list-item" data-page="383">Disposal</div>
+            
+            <!-- Bloodfiend Pages -->
+            <div class="list-item" data-page="384">Hardblood Manifestation</div>
+            <div class="list-item" data-page="385">Hardblood Enhancement</div>
+            <div class="list-item" data-page="386">Hardblood Manipulation</div>
+            <div class="list-item" data-page="387">Hardblood Synchronization</div>
+
+            <!-- The Middle Pages -->
+            <div class="list-item" data-page="412">Checking the Book</div>
+            <div class="list-item" data-page="413">Punching</div>
+            <div class="list-item" data-page="414">Kicking</div>
+            <div class="list-item" data-page="415">Aim for the Solar Plexus</div>
+            <div class="list-item" data-page="417">Proof of Loyalty</div>
+            <div class="list-item" data-page="418">Chains of Loyalty</div>
+            <div class="list-item" data-page="419">Payback</div>
+            <div class="list-item" data-page="421">Write em' All Down</div>
+            <div class="list-item" data-page="422">Vengeance Awaits You All</div>
+            <div class="list-item" data-page="423">Promised Suffering</div>
+            <div class="list-item" data-page="424">ENOUGH GAMES!</div>
+            <div class="list-item" data-page="425">A Just Vengeance</div>
+            <div class="list-item" data-page="426">MY HAIR COUPONS!!!!!</div>
+            <div class="list-item" data-page="427">COMPLETE AND TOTAL EXTERMINATION!!!</div>
+
+            <!-- The Ring Pages -->
+            <div class="list-item" data-page="394">The Canvas</div>
+            <div class="list-item" data-page="395">Paint</div>
+            <div class="list-item" data-page="396">Splatter</div>
+            <div class="list-item" data-page="397">Coloring</div>
+            <div class="list-item" data-page="398">Brushstroke</div>
+            <div class="list-item" data-page="399">Dotting</div>
+            <div class="list-item" data-page="400">Natural Style</div>
+            <div class="list-item" data-page="401">A Single Point of Art</div>
+            <div class="list-item" data-page="402">Beat the Brush</div>
+            <div class="list-item" data-page="403">Artwork Inspection</div>
+            <div class="list-item" data-page="404">Hematic Coloring</div>
+            <div class="list-item" data-page="405">Pointillism</div>
+            <div class="list-item" data-page="406">Sanguine Pointillism</div>
+            <div class="list-item" data-page="407">Blood of the Valley</div>
+
+            <!-- Special -->
+            <div class="list-item" data-page="432">Craft Bullet</div>
+            <div class="list-item" data-page="433">Poise Exchange</div>
+
+            <!-- Luckhold Maids Pages -->
+            <div class="list-item" data-page="434">Trained Breathing</div>
+            <div class="list-item" data-page="435">Cleaning Up</div>
+            <div class="list-item" data-page="436">Swift Evasion</div>
+            <div class="list-item" data-page="437">Spotless Cleaning</div>
+            <div class="list-item" data-page="438">Restrain Target</div>
+            <div class="list-item" data-page="439">Track Him Down</div>
+
+            <!-- Ashley Graham Pages -->
+            <div class="list-item" data-page="440">Bring Him Home</div>
+            <div class="list-item" data-page="441">The Family will not Approve of this</div>
+            <div class="list-item" data-page="442">Disappear</div>
+            <div class="list-item" data-page="443">Restrain the Young Master</div>
+            <div class="list-item" data-page="444">Flash Cuts</div>
+
+            <!-- Luckhold Butler Pages -->
+            <div class="list-item" data-page="445">Composed Breathing</div>
+            <div class="list-item" data-page="446">Repetitive Assistance</div>
+            <div class="list-item" data-page="447">Concise Briefing</div>
+            <div class="list-item" data-page="448">Leading the Way</div>
+            <div class="list-item" data-page="449">Defensive Manuever</div>
+            <div class="list-item" data-page="450">Way of the Wolf</div>
+
+            <!-- Ben Graham Pages -->
+            <div class="list-item" data-page="451">Mark of the Wolves</div>
+            <div class="list-item" data-page="452">Be Obedient, Gafs.</div>
+            <div class="list-item" data-page="453">Return to the Family</div>
+            <div class="list-item" data-page="454">I will be your Escort</div>
+            <div class="list-item" data-page="455">I must repay my Benefactor</div>
+            <div class="list-item" data-page="456">Time to end this Charade.</div>
+
+            <!-- Lady Luck Casino Pages -->
+            <div class="list-item" data-page="457">Enforce</div>
+            <div class="list-item" data-page="458">Secure</div>
+            <div class="list-item" data-page="459">Don't Interrupt</div>
+            <div class="list-item" data-page="460">Get Out</div>
+
+            <!-- Luckhold Siblings Pages -->
+            <div class="list-item" data-page="461">Ughhh...</div>
+            <div class="list-item" data-page="462">It Hurts...</div>
+            <div class="list-item" data-page="463">Help Us...</div>
+            <div class="list-item" data-page="464">Gafs...</div>
+            <div class="list-item" data-page="465">COWARD</div>
+            <div class="list-item" data-page="466">WHY DID YOU LEAVE US</div>
+
+            <!-- Faith of the Promised Land Pages -->
+            <div class="list-item" data-page="467">Fates Sealed</div>
+            <div class="list-item" data-page="468">Lowly Coward</div>
+            <div class="list-item" data-page="469">Unjust Execution</div>
+            <div class="list-item" data-page="470">Burdened Past</div>
+            <div class="list-item" data-page="471">Severed Fates</div>
+            <div class="list-item" data-page="472">Unspoken Trauma</div>
+            <div class="list-item" data-page="473">Clinging onto a Memory</div>
+        </div>         
+            </div>
+
+            <!-- Pages Inventory -->
+            <div class="inventory-section">
+                <h3 class="owned-pages-menu-btn" id="ownedPagesMenuBtn">Owned Pages ▼</h3>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right-panel">
+            <!-- Character Stats/Combat Parameters -->
+            <div class="stats-section">
+                <div class="stat-row">
+                    <span>MAX LIGHT: <span id="maxLightValue">X</span></span>
+                </div>
+                <div class="stat-row temperance-stat">
+                    <span>MAX HAND: <span id="maxHandValue">10</span></span>
+                </div>
+                <div class="stat-row temperance-stat">
+                    <span>DRAW PER SCENE: <span id="drawPerSceneValue">1</span></span>
+                </div>
+                <div class="stat-row">
+                    <span>SPEED RANGE: <span id="speedRangeValue">1-3</span></span>
+                </div>
+                <div class="stat-row">
+                    <span>SPEED DICE: <span id="speedDiceValue">1</span></span>
+                </div>
+                <div class="stat-row">
+                    <span>BULLETS: <input type="number" id="bulletCount" value="0" min="0" max="999" class="bullet-input" /></span>
+                </div>
+            </div>
+
+            <!-- Current Combat State/Resources -->
+            <div class="combat-state-section">
+                <div class="combat-header">
+                    <div class="combat-stats">
+                        <span class="emotion-label">
+                            EMOTION LV: <span id="emotionLvValue"></span>
+                            <span id="emotionCounts" class="emotion-counts-inline">+0 / -0</span>
+                        </span>
+                    </div>
+                    <div class="combat-actions">
+                        <button class="encounter-btn">START ENCOUNTER</button>
+                        <button class="scene-btn">NEXT SCENE</button>
+                    </div>
+                </div>
+                <div class="light-indicator-container">
+                    <div id="lightIndicatorOrbs" class="light-indicator-orbs">
+                    </div>
+                    <img src="Other Stuff/Light/DiceCost_UnitBottomUI .png" alt="Dice Cost UI" class="dice-cost-bottom-ui" />
+                </div>
+                <div class="hexagonal-slots">
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                    <div class="hex-slot filled"><img src="DiceRollinf-unscreen.gif" alt="Speed Range" class="speed-range-img"></div>
+                </div>
+            </div>
+
+            <!-- Hand/Card Management -->
+            <div class="hand-section">
+                <div class="hand-left">
+                    <!-- HP/SP summary above hand limit -->
+                    <div class="vitals-summary">
+                        <div class="vital-container hp-vital-container">
+                            <div class="vital-header">
+                                <div class="vital-left">
+                                    <img src="UI_Card/Health.png" alt="HP" class="vital-icon hp-icon">
+                                    <span class="vital-label">HP</span>
+                                </div>
+                                <div class="vital-right">
+                                    <span class="vital-values"><input type="number" id="currentHp" value="0" class="vital-input" readonly />/<span id="maxHp">0</span></span>
+                                </div>
+                            </div>
+                            <div class="vital-bar-container">
+                                <div class="vital-bar hp-bar">
+                                    <div class="vital-bar-fill hp-bar-fill" id="hpBarFill"></div>
+                                    <div class="hp-bar-shield" id="hpBarShield"></div>
+                                    <!-- Tremor - Execution Threshold Marker -->
+                                    <div class="tremor-threshold-marker tremor-threshold-red" id="tremorThresholdRed" style="display: none;">
+                                        <div class="threshold-line"></div>
+                                        <div class="threshold-label">00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="staggerOverlay" class="stagger-overlay" style="display: none;">
+                                <img src="STATUSICONS/stagger.png" alt="STAGGERED" class="stagger-image">
+                            </div>
+                        </div>
+                        <div class="vital-container sp-vital-container">
+                            <div class="vital-header">
+                                <div class="vital-left">
+                                    <img src="UI_Card/SP_Icon.png" alt="SP" class="vital-icon sp-icon">
+                                    <span class="vital-label">SP</span>
+                                </div>
+                                <div class="vital-right">
+                                    <span class="vital-values"><input type="number" id="currentSp" value="0" class="vital-input" />/<span id="maxSp">0</span></span>
+                                </div>
+                            </div>
+                            <div class="vital-bar-container">
+                                <div class="vital-bar sp-bar">
+                                    <div class="vital-bar-fill sp-bar-fill" id="spBarFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Emotion bar + icons positioned below HP and SP bars -->
+                        <div class="emotion-below-vitals">
+                            <div class="resource-row">
+                                <img src="Other Stuff/EmotionLevel/CharacterProfileBanner.png" alt="Character Profile Banner" class="resource-row-banner">
+                                <div class="emotion-level-icons">
+                                    <img src="Other Stuff/EmotionLevel/EmotionCardSelection_Title_Level1.png" alt="Emotion Level 1" class="emotion-level-icon">
+                                    <img src="Other Stuff/EmotionLevel/EmotionCardSelection_Title_Level2.png" alt="Emotion Level 2" class="emotion-level-icon">
+                                    <img src="Other Stuff/EmotionLevel/EmotionCardSelection_Title_Level3.png" alt="Emotion Level 3" class="emotion-level-icon">
+                                    <img src="Other Stuff/EmotionLevel/EmotionCardSelection_Title_Level4.png" alt="Emotion Level 4" class="emotion-level-icon">
+                                    <img src="Other Stuff/EmotionLevel/EmotionCardSelection_Title_Level5.png" alt="Emotion Level 5" class="emotion-level-icon">
+                                </div>
+                                <div class="resource-bar" id="emotionBar">
+                                    <div class="resource-fill" id="emotionFill"></div>
+                                    <div class="emotion-segments" id="emotionSegments"></div>
+                                </div>
+                                <div class="modifier-buttons">
+                                    <button class="mod-btn" id="emotionPlusBtn">+</button>
+                                    <button class="mod-btn" id="emotionMinusBtn">-</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hp-damage-row">
+                            <label for="hpDamageInput" class="dmg-label">DMG</label>
+                            <select id="dmgTarget" class="dmg-select">
+                                <option value="hp">HP</option>
+                                <option value="sp">SP</option>
+                            </select>
+                            <!-- Damage mode: flat value vs percentage of max HP/SP -->
+                            <select id="dmgMode" class="dmg-select" title="Damage input mode">
+                                <option value="flat">VAL</option>
+                                <option value="percent">%</option>
+                            </select>
+                            <input type="number" id="hpDamageInput" class="dmg-input" min="0" placeholder="0">
+                            <button id="applyHpDamageBtn" class="dmg-btn">APPLY</button>
+                            <label for="hpHealInput" class="dmg-label" style="margin-left:12px;">HEAL</label>
+                            <select id="healTarget" class="dmg-select">
+                                <option value="hp">HP</option>
+                                <option value="sp">SP</option>
+                            </select>
+                            <!-- Heal mode: flat value vs percentage of max HP/SP -->
+                            <select id="healMode" class="dmg-select" title="Heal input mode">
+                                <option value="flat">VAL</option>
+                                <option value="percent">%</option>
+                            </select>
+                            <input type="number" id="hpHealInput" class="dmg-input" min="0" placeholder="0">
+                            <button id="applyHpHealBtn" class="dmg-btn">APPLY</button>
+                        </div>
+                    </div>
+                    <div class="scene-counter">SCENE: <span id="currentSceneNumber">1</span></div>
+                    <div class="hand-header-row">
+                        <div class="hand-limit">HAND LIMIT: <span id="currentHandLimit">0</span>/<span id="maxHandLimit">10</span></div>
+                        <img id="singletonIndicator" class="singleton-indicator" src="ICONS/IndexProselytesIcon.webp" alt="Singleton Active" title="Active only when no duplicate pages in hand" style="display:none;" />
+                    </div>
+                    <!-- Status Effects: visually consistent with hand-display -->
+                    <div class="status-effects-display">
+                        <div class="status-effects-header"></div>
+                        <div class="status-effects-list" id="statusEffectsList">
+                        </div>
+                    </div>
+                    <div class="hand-display">
+                        
+                    </div>
+                    <div class="action-buttons-row">
+                        <button class="combat-phase-btn" id="combatPhaseBtn">START COMBAT PHASE</button>
+                        <button class="end-encounter-btn">END ENCOUNTER</button>
+                    </div>
+                </div>
+                <div class="hand-actions">
+                    <button class="swap-btn">
+                        <img src="BattleIcon_EgoOff.png" alt="Swap" class="swap-icon normal-icon">
+                        <img src="BattleIcon_EgoOn.png" alt="Special Pages" class="swap-icon special-icon" style="display: none;">
+                    </button>
+                </div>
+
+            <div class="action-buttons-row">
+                <button class="util-btn" id="addLightBtn">
+                    <span class="btn-line-1">ADD</span>
+                    <span class="btn-line-2">LIGHT</span>
+                </button>
+                <button class="util-btn" id="drawPageBtn">
+                    <span class="btn-line-1">DRAW</span>
+                    <span class="btn-line-2">PAGE</span>
+                </button>
+                <button class="util-btn" id="discardRandomBtn">
+                    <span class="btn-line-1">DISCARD</span>
+                    <span class="btn-line-2">RANDOM PAGE</span>
+                </button>
+                <button class="util-btn" id="discardAllBtn">
+                    <span class="btn-line-1">DISCARD</span>
+                    <span class="btn-line-2">ALL PAGES</span>
+                </button>
+                <button class="util-btn" id="discardPageManuallyBtn">
+                    <span class="btn-line-1">DISCARD PAGE</span>
+                    <span class="btn-line-2">MANUALLY</span>
+                </button>
+                <button class="util-btn" id="addPageManuallyBtn">
+                    <span class="btn-line-1">ADD PAGE</span>
+                    <span class="btn-line-2">MANUALLY</span>
+                </button>
+                <button class="util-btn" id="addStatusEffectBtn">
+                    <span class="btn-line-1">ADD STATUS</span>
+                    <span class="btn-line-2">EFFECTS</span>
+                </button>
+                <button class="util-btn" id="addDebuffEffectBtn">
+                    <span class="btn-line-1">ADD DEBUFF</span>
+                    <span class="btn-line-2">EFFECTS</span>
+                </button>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Page Stats Popup -->
+    <div id="pagePopup" class="page-popup">
+        <div class="page-popup-content">
+            <div class="popup-header">
+                <h3 id="popupPageName">Page Name</h3>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="page-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Page Category:</span>
+                    <span class="stat-value" id="popupPageCategory">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Category:</span>
+                    <span class="stat-value" id="popupCategory">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Ranking:</span>
+                    <span class="stat-value" id="popupRanking">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Dice:</span>
+                    <span class="stat-value" id="popupDice">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Keywords:</span>
+                    <span class="stat-value" id="popupKeywords">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Range:</span>
+                    <span class="stat-value" id="popupRange">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Damage Type:</span>
+                    <span class="stat-value" id="popupDamageType">-</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Light Usage:</span>
+                    <span class="stat-value" id="popupLightUsage">-</span>
+                </div>
+            </div>
+            <div class="popup-actions">
+                <button class="add-page-btn">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dice Placement Popup -->
+    <div id="dicePlacementPopup" class="dice-placement-popup">
+        <div class="dice-popup-content">
+            <div class="popup-header">
+                <h3>Dice Placement</h3>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="dice-popup-body">
+                <div class="page-info">
+                    <h4 id="dicePopupPageName">Page Name</h4>
+                    <p id="dicePopupPageDetails">Page details will appear here</p>
+                </div>
+                <div class="dice-selection">
+                    <div id="diceOptions" class="dice-options">
+                        <!-- Dice options will be populated here -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="popup-actions">
+                <button class="confirm-placement-btn">Confirm Placement</button>
+                <button class="cancel-placement-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Occupied Dice Popup -->
+    <div id="occupiedDicePopup" class="dice-placement-popup">
+        <div class="dice-popup-content">
+            <div class="popup-header">
+                <h3>Occupied Dice</h3>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="dice-popup-body">
+                <div class="page-info">
+                    <h4 id="occupiedDicePageName">Page Name</h4>
+                    <p>Do you want to unequip this page and return it to your hand?</p>
+                </div>
+            </div>
+            <div class="popup-actions">
+                <button class="confirm-unequip-btn">Unequip</button>
+                <button class="cancel-unequip-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Owned Pages Menu Popup -->
+    <div id="ownedPagesPopup" class="owned-pages-popup">
+        <div class="owned-pages-popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Owned Pages</h3>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="popup-body">
+                <div class="popup-main-content">
+                    <div class="popup-left-panel">
+                        <div class="popup-section">
+                            <h4 class="section-title">Search Pages:</h4>
+                            <input type="text" id="ownedPagesSearch" class="search-input" placeholder="Search by name, category, or keywords...">
+                        </div>
+                        
+                        <div class="popup-section">
+                            <h4 class="section-title">Pages in Inventory:</h4>
+                            <div class="owned-pages-display">
+                                <!-- Owned pages will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="popup-right-panel">
+                        <div class="popup-section">
+                            <h4 class="section-title">Page Cards Preview</h4>   
+                        </div>
+                        <div class="cards-grid" id="cardsGrid">
+                            <!-- Card grid will be populated here -->
+                        </div>
+                        <div class="save-buttons-section">
+                            <button class="save-deck-btn" id="saveDeckBtn">SAVE DECK</button>
+                            <button class="view-saved-decks-btn" id="viewSavedDecksBtn">VIEW SAVED DECKS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="diceTooltip"></div>
+    <div id="statusEffectTooltip"></div>
+    
+    <!-- Custom Modal for Input (replaces prompt) -->
+    <div id="customPromptModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <h3 id="promptModalTitle">Enter Information</h3>
+                <span class="custom-modal-close">&times;</span>
+            </div>
+            <div class="custom-modal-body">
+                <p id="promptModalMessage">Please enter a value:</p>
+                <input type="text" id="promptModalInput" class="custom-modal-input" placeholder="Enter text here...">
+            </div>
+            <div class="custom-modal-actions">
+                <button id="promptModalConfirm" class="custom-modal-btn confirm-btn">OK</button>
+                <button id="promptModalCancel" class="custom-modal-btn cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom Modal for Confirmation (replaces confirm) -->
+    <div id="customConfirmModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <h3 id="confirmModalTitle">Confirm Action</h3>
+                <span class="custom-modal-close">&times;</span>
+            </div>
+            <div class="custom-modal-body">
+                <p id="confirmModalMessage">Are you sure you want to proceed?</p>
+            </div>
+            <div class="custom-modal-actions">
+                <button id="confirmModalYes" class="custom-modal-btn confirm-btn">Yes</button>
+                <button id="confirmModalNo" class="custom-modal-btn cancel-btn">No</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom Modal for Alerts (replaces alert) -->
+    <div id="customAlertModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="custom-modal-header">
+                <h3 id="alertModalTitle">Information</h3>
+                <span class="custom-modal-close">&times;</span>
+            </div>
+            <div class="custom-modal-body">
+                <p id="alertModalMessage">This is an alert message.</p>
+            </div>
+            <div class="custom-modal-actions">
+                <button id="alertModalOk" class="custom-modal-btn confirm-btn">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Adding Passives -->
+    <div id="addPassiveModal" class="add-page-modal">
+        <div class="passive-modal-content">
+            <h3 class="red-text">Add Passive</h3>
+            <div class="search-group">
+                <input type="text" id="passiveSearchInput" class="search-input" placeholder="Search passives...">
+            </div>
+            <div class="list-display" id="passiveListDisplay" style="max-height: 300px;">
+                <!-- Passives will be populated here -->
+            </div>
+            <div class="passive-modal-actions">
+                <button id="addPassiveConfirm" class="action-btn">Add Selected</button>
+                <button id="addPassiveCancel" class="action-btn" style="background-color: #666;">Cancel</button>
+            </div>
+            <span class="close-popup" style="position: absolute; top: 20px; right: 20px; color: #aaa; font-size: 28px; cursor: pointer;">&times;</span>
+        </div>
+    </div>
+    
+    <!-- Passive Tooltip -->
+    <div id="passiveTooltip" class="passive-tooltip"></div>
+</body>
+</html>
+
